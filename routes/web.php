@@ -8,7 +8,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware('auth.basic')->group(function () {
+Route::middleware(middleware: 'auth.basic')->group(function () {
     Route::get('/players', [PlayersController::class, 'index'])->name('players');
 });
 
